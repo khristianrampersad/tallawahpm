@@ -11,10 +11,10 @@ const About: React.FC = () => {
               About Our Company
             </h2>
             <p className="text-base sm:text-lg text-secondary-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              With our industry-leading expertise and suite of project management advisory, project controls, and claims evaluation skills, we help clients minimize project risks, optimize performance, and achieve their overall project and performance goals.
             </p>
             <p className="text-base sm:text-lg text-secondary-600 leading-relaxed">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              We bring control and clarity to complex construction projects through experience-based insights and a complete understanding of the specific risks and circumstances our clients face. Our team provides proactive construction risk management strategies and tailored solutions.
             </p>
             
             <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-6">
@@ -48,7 +48,7 @@ const About: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-secondary-900 mb-2 text-sm sm:text-base">Quality Focus</h3>
-                  <p className="text-xs sm:text-sm text-secondary-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-xs sm:text-sm text-secondary-600">Delivering excellence in every project with rigorous quality standards and attention to detail.</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
@@ -57,7 +57,7 @@ const About: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-secondary-900 mb-2 text-sm sm:text-base">Innovation</h3>
-                  <p className="text-xs sm:text-sm text-secondary-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-xs sm:text-sm text-secondary-600">Leveraging cutting-edge methodologies and technologies to solve complex project challenges.</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
@@ -66,7 +66,7 @@ const About: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-secondary-900 mb-2 text-sm sm:text-base">Team Work</h3>
-                  <p className="text-xs sm:text-sm text-secondary-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-xs sm:text-sm text-secondary-600">Collaborative approach with seamless coordination of all project stakeholders and team members.</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
@@ -75,10 +75,48 @@ const About: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-secondary-900 mb-2 text-sm sm:text-base">Efficiency</h3>
-                  <p className="text-xs sm:text-sm text-secondary-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-xs sm:text-sm text-secondary-600">Optimizing processes and resources to deliver projects on time and within budget constraints.</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* New Sections for HR Processes */}
+        <div className="mt-16 grid gap-12 md:grid-cols-3">
+          {/* Recruiting and Selection Process */}
+          <div className="bg-secondary-50 rounded-xl p-6 shadow-md flex flex-col">
+            <h3 className="text-xl font-semibold text-primary-600 mb-3">Recruiting & Selection Process</h3>
+            <ul className="list-disc list-inside text-secondary-700 text-base flex-1">
+              <li>Structured timeline for each hiring phase</li>
+              <li>Comprehensive research on candidates</li>
+              <li>Behavioral and technical interviews</li>
+              <li>Background and reference checks</li>
+              <li>Validation of technical and professional qualifications</li>
+              <li>Candidate testing and assessment</li>
+            </ul>
+          </div>
+          {/* Training Programs and Knowledge Sharing */}
+          <div className="bg-secondary-50 rounded-xl p-6 shadow-md flex flex-col">
+            <h3 className="text-xl font-semibold text-primary-600 mb-3">Training & Knowledge Sharing</h3>
+            <ul className="list-disc list-inside text-secondary-700 text-base flex-1">
+              <li>Comprehensive onboarding for all new staff</li>
+              <li>Mandatory safety, compliance, and technical training</li>
+              <li>Ongoing career development and mentorship</li>
+              <li>Regular knowledge sharing sessions and workshops</li>
+              <li>Access to industry certifications and continuing education</li>
+            </ul>
+          </div>
+          {/* Staff Performance Evaluation Process */}
+          <div className="bg-secondary-50 rounded-xl p-6 shadow-md flex flex-col">
+            <h3 className="text-xl font-semibold text-primary-600 mb-3">Staff Performance Evaluation</h3>
+            <ul className="list-disc list-inside text-secondary-700 text-base flex-1">
+              <li>Annual and project-based performance reviews</li>
+              <li>Clear KPIs and goal setting for all roles</li>
+              <li>360-degree feedback from peers and supervisors</li>
+              <li>Personalized development plans</li>
+              <li>Recognition and reward for high performance</li>
+            </ul>
           </div>
         </div>
       </div>

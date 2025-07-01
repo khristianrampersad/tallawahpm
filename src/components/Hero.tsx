@@ -9,11 +9,11 @@ const Hero: React.FC = () => {
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-900 leading-tight">
-                Transform Your Projects with
-                <span className="text-primary-600 block">Expert Management</span>
+                Execute Projects with
+                <span className="text-primary-600 block">Confidence</span>
               </h1>
               <p className="text-lg sm:text-xl text-secondary-600 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                Expert consultation, risk management, and dispute resolution support for your construction and infrastructure projects. We bring control and clarity to complex projects.
               </p>
             </div>
             
@@ -21,9 +21,9 @@ const Hero: React.FC = () => {
               <button className="btn-primary text-lg px-6 sm:px-8 py-3 sm:py-4">
                 Start Your Project
               </button>
-              <button className="btn-secondary text-lg px-6 sm:px-8 py-3 sm:py-4">
+              <a href="#projects" className="btn-secondary text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
                 View Our Work
-              </button>
+              </a>
             </div>
 
             {/* Stats */}

@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
             Get In Touch
           </h2>
           <p className="text-lg sm:text-xl text-secondary-600 max-w-3xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ready to execute your projects with confidence? Contact us to discuss how our expertise in project management, risk analysis, and dispute resolution can support your success.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
                   id="message"
                   rows={4}
                   className="w-full px-3 sm:px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm sm:text-base"
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us about your project needs..."
                 ></textarea>
               </div>
               <button type="submit" className="btn-primary w-full">

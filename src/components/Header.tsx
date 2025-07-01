@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/logos/Logo.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,9 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-xl sm:text-2xl font-bold text-primary-600">ProjectFlow</h1>
+            <a href="#home" className="block w-36 sm:w-44">
+              <img src={logo} alt="Logo" className="h-14 sm:h-20 w-auto object-contain" />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -30,13 +33,6 @@ const Header: React.FC = () => {
               Contact
             </a>
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <button className="btn-primary">
-              Get Started
-            </button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -68,9 +64,6 @@ const Header: React.FC = () => {
               <a href="#contact" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2">
                 Contact
               </a>
-              <button className="btn-primary w-full mt-4">
-                Get Started
-              </button>
             </nav>
           </div>
         )}
