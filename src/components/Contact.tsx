@@ -1,6 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Using EmailJS or similar service would be ideal for production
+      // For now, we'll use a mailto link as a fallback
+      const mailtoLink = `mailto:tallawahconsulting@gmail.com?subject=Contact Form Submission from ${formData.firstName} ${formData.lastName}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+      
+      window.location.href = mailtoLink;
+      
+      setSubmitStatus('success');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="section-padding bg-primary-50">
       <div className="container-max">
@@ -19,7 +64,7 @@ const Contact: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-semibold text-primary-900 mb-6">
               Send us a message
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-primary-700 mb-2">
@@ -28,6 +73,10 @@ const Contact: React.FC = () => {
                   <input
                     type="text"
                     id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                     placeholder="Your first name"
                   />
@@ -39,6 +88,10 @@ const Contact: React.FC = () => {
                   <input
                     type="text"
                     id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                     placeholder="Your last name"
                   />
@@ -51,6 +104,10 @@ const Contact: React.FC = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                   className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
@@ -62,6 +119,9 @@ const Contact: React.FC = () => {
                 <input
                   type="text"
                   id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                   placeholder="Your company name"
                 />
@@ -72,13 +132,34 @@ const Contact: React.FC = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                   rows={4}
                   className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 resize-none"
                   placeholder="Tell us about your project requirements..."
                 ></textarea>
               </div>
-              <button type="submit" className="btn-primary w-full">
-                Send Message
+              
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 text-sm">Thank you! Your message has been sent successfully.</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 text-sm">There was an error sending your message. Please try again or contact us directly.</p>
+                </div>
+              )}
+              
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -109,7 +190,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary-900">Email</h4>
-                    <p className="text-primary-600">info@projectflow.com</p>
+                    <p className="text-primary-600">tallawahconsulting@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
