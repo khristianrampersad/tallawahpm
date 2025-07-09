@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-primary-100">
       <div className="container-max">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -17,26 +17,26 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium">
+            <a href="#home" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium">
               Home
             </a>
-            <a href="#services" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium">
+            <a href="#services" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium">
               Services
             </a>
-            <a href="#projects" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium">
+            <a href="#projects" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium">
               Projects
             </a>
-            <a href="#about" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium">
+            <a href="#about" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium">
               About
             </a>
-            <a href="#contact" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium">
+            <a href="#contact" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium">
               Contact
             </a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden p-2 -mr-2 text-primary-600 hover:text-primary-800 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,21 +47,21 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-secondary-200">
+          <div className="md:hidden py-4 border-t border-primary-100">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2">
+              <a href="#home" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium py-2">
                 Home
               </a>
-              <a href="#services" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2">
+              <a href="#services" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium py-2">
                 Services
               </a>
-              <a href="#projects" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2">
+              <a href="#projects" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium py-2">
                 Projects
               </a>
-              <a href="#about" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2">
+              <a href="#about" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium py-2">
                 About
               </a>
-              <a href="#contact" className="text-secondary-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2">
+              <a href="#contact" className="text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium py-2">
                 Contact
               </a>
             </nav>
